@@ -11,4 +11,4 @@ def Moscow_current_time():
     return render_template('moscow_time.html', time=moscow_time)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
