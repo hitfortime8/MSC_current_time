@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: current-time
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: current-time
+  template:
+    metadata:
+      labels:
+        app: current-time
+    spec:
+      containers:
+      - name: current-time
+        image: ghcr.io/hitfortime8/current-time:v1
+        ports:
+        - containerPort: 5000
+      imagePullSecrets:
+      - name: ghcr-auth
